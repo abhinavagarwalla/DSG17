@@ -1,0 +1,8 @@
+*.pyc
+src/ignore_for_now
+log
+models
+submissions
+src/features
+src/datasets
+data
