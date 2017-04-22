@@ -12,11 +12,10 @@ import matplotlib.pyplot as plt
 from sklearn import datasets, svm
 from sklearn.feature_selection import SelectPercentile, f_classif, chi2
 
-
-if __name__=="__main__":
-	X = train.values
-	y = train_target.values.ravel()
-	print('- Data Loaded')
+def fselect():
+	###############################################################################
+	# Univariate feature selection with F-test for feature scoring
+	# We use the default selection function: the 10% most significant features
 
 	plt.figure(1)
 	plt.clf()
@@ -24,9 +23,6 @@ if __name__=="__main__":
 	X_indices = np.arange(X.shape[-1])
 	X_labels = train.columns.values
 
-	###############################################################################
-	# Univariate feature selection with F-test for feature scoring
-	# We use the default selection function: the 10% most significant features
 	selector = SelectPercentile(f_classif, percentile=10)
 	selector.fit(X, y)
 	scores = -np.log10(selector.pvalues_)
@@ -41,3 +37,10 @@ if __name__=="__main__":
 	plt.axis('tight')
 	plt.legend(loc='upper right')
 	plt.show()
+
+if __name__=="__main__":
+	# X = train.values
+	# y = train_target.values.ravel()
+	print('- Data Loaded')
+
+	print train.columns

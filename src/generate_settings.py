@@ -4,8 +4,6 @@ from configs import *
 import pickle as pkl
 import pandas as pd
 
-__author__ = 'mudit'
-
 paths = [FEATURES_PATH, DATASET_PATH, RESULTS_PATH]
 
 for i in range(configs['n_folds']):
